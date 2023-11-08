@@ -1,0 +1,198 @@
+/* Общие стили для элементов списка */
+.search-suggestions,
+.search-result {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Стили для подсказок */
+.search-suggestions {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-suggestions li {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    color: #8a8a8a;
+}
+
+
+.search-suggestions li:first-child {
+    border-top: none;
+}
+
+.search-suggestions li:hover {
+    background-color: #f5f5f5;
+}
+
+/* Стили для результатов поиска */
+.search-result h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.search-result p {
+    font-size: 16px;
+}
+
+.search-result a {
+    text-decoration: none;
+    color: blue;
+}
+
+.search-result a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для темы */
+.light-theme,
+.dark-theme {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+/* Стили для кнопки переключения темы */
+#theme-toggle {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#theme-toggle.light-theme {
+    background-color: #007bff;
+}
+
+#theme-toggle.dark-theme {
+    background-color: #333;
+}
+
+/* Стили для цены */
+.price-tile{
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+.price-info {
+    background: #ffffff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+.price-tile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-tile > div {
+    text-align: center;
+    flex: 1;
+}
+
+.price-tile h3,
+.price-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.price-tile p,
+.price-info p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Стили для подсказок в темной теме */
+.dark-theme .search-suggestion:hover {
+    background-color: #8a8a8a;
+}
+
+/* Применение темной темы ко всем элементам */
+.dark-theme .search-suggestions,
+.dark-theme .search-result,
+.dark-theme .light-theme,
+.dark-theme .dark-theme,
+.dark-theme #theme-toggle,
+.dark-theme .price-tile,
+.dark-theme .price-info {
+    background-color: #333;
+    color: white;
+}
+/* Общие стили для переключателя */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Скрыть сам чекбокс */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Основа переключателя */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* Стиль переключателя включения */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Когда чекбокс активирован, измените фон переключателя */
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+/* Стиль для включенного переключателя */
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
